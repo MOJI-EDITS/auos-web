@@ -29,9 +29,14 @@ const About: React.FC = () => {
     }
   ];
 
+  const handleCategoryChange = (category: string) => {
+    // Since this is the about page, we don't need to handle category changes
+    console.log('Category changed:', category);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-      <CategoryNav />
+      <CategoryNav onCategoryChange={handleCategoryChange} />
       <CartPreview />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
