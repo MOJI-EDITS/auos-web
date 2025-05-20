@@ -27,6 +27,11 @@ const ProductDetails: React.FC = () => {
     }
   }, [product]);
 
+  const handleCategoryChange = (category: string) => {
+    // Navigate to home page with the selected category
+    router.push(`/?category=${category}`);
+  };
+
   // Show loading state
   if (isLoading) {
     return (
@@ -52,7 +57,7 @@ const ProductDetails: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-      <CategoryNav />
+      <CategoryNav onCategoryChange={handleCategoryChange} />
       <CartPreview />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
